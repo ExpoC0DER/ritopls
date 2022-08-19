@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import cors from "cors";
 import "../App.css";
 import DisappearMsg from "./DisappearMsg";
 
@@ -23,21 +22,13 @@ function PlayerSearch(props) {
       return;
     }
 
-    getPlayerData(searchText).then((playerData) => {
-      var arr = JSON.parse(window.localStorage.getItem("players"));
-      if (arr.find((player) => player.id === playerData.id) == null) {
-        getRankedData(playerData);
-      } else {
-        setErrorMessage("Player already in list.");
-      }
-    });
-    setTimeout(() => setErrorMessage(""), 2000);
+    getPlayerData(searchText);
+
     setSearchText("");
   };
 
-  const getPlayerData = async (req, res) => {
-    const summonerName = req;
-    const response = await axios
+  function getPlayerData(summonerName) {
+    axios
       .get(
         "https://" +
           server +
@@ -48,21 +39,59 @@ function PlayerSearch(props) {
         {
           headers: {
             // "X-Riot-Token": REACT_APP_API_KEY,
-            // "Access-Control-Allow-Origin": "*",
-            // "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+            // "Access-Control-Allow-Headers": "Content-Type, DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range",
+            // "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT, GET, PUT, DELETE, POST, OPTIONS",
+            // "Access-Control-Allow-Origin": "*, *",
+            // "Access-Control-Expose-Headers": "Content-Length,Content-Range"
           },
         }
       )
-      .catch((e) => {
+      .then(function (response) {
+        getMasteryData(response.data);
+      })
+      .catch(function (error) {
         setErrorMessage("Summoner not found");
         setTimeout(() => setErrorMessage(""), 2000);
-        return res.status(e.response.status).json(e.response.data);
+        console.log(error);
       });
+  }
 
-    return response.data;
-  };
+  function getMasteryData(playerData) {
 
-  function getRankedData(playerData) {
+    var arr = JSON.parse(window.localStorage.getItem("players"));
+    if (arr.find((player) => player.id === playerData.id) != null) {
+      setErrorMessage("Player already in list.");
+      setTimeout(() => setErrorMessage(""), 2000);
+      return;
+    } 
+
+    axios
+      .get(
+        "https://" +
+          server +
+          ".api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/" +
+          playerData.id +
+          "?api_key=" +
+          REACT_APP_API_KEY,
+        {
+          headers: {
+            // "X-Riot-Token": REACT_APP_API_KEY,
+            // "Access-Control-Allow-Headers": "Content-Type, DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range",
+            // "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT, GET, PUT, DELETE, POST, OPTIONS",
+            // "Access-Control-Allow-Origin": "*, *",
+            // "Access-Control-Expose-Headers": "Content-Length,Content-Range"
+          },
+        }
+      )
+      .then(function (response) {
+        getRankedData(playerData,response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  function getRankedData(playerData,masteryData) {
     const APICallString =
       "https://" +
       server +
@@ -76,11 +105,10 @@ function PlayerSearch(props) {
       .then(function (response) {
         props.onSubmit({
           id: playerData.id,
-          isHovering: false,
-          text: searchText,
           server: serverText,
           playerData: playerData,
           rankData: response.data,
+          masteryData: masteryData,
         });
       })
       .catch(function (error) {
