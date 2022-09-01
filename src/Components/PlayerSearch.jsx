@@ -57,13 +57,12 @@ function PlayerSearch(props) {
   }
 
   function getMasteryData(playerData) {
-
     var arr = JSON.parse(window.localStorage.getItem("players"));
     if (arr.find((player) => player.id === playerData.id) != null) {
       setErrorMessage("Player already in list.");
       setTimeout(() => setErrorMessage(""), 2000);
       return;
-    } 
+    }
 
     axios
       .get(
@@ -84,14 +83,14 @@ function PlayerSearch(props) {
         }
       )
       .then(function (response) {
-        getRankedData(playerData,response.data);
+        getRankedData(playerData, response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
   }
 
-  function getRankedData(playerData,masteryData) {
+  function getRankedData(playerData, masteryData) {
     const APICallString =
       "https://" +
       server +
@@ -103,12 +102,32 @@ function PlayerSearch(props) {
     axios
       .get(APICallString)
       .then(function (response) {
+        getChallengesData(playerData, masteryData, response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  function getChallengesData(playerData, masteryData, rankedData) {
+    const APICallString =
+      "https://" +
+      server +
+      ".api.riotgames.com/lol/challenges/v1/player-data/" +
+      playerData.puuid +
+      "?api_key=" +
+      REACT_APP_API_KEY;
+
+    axios
+      .get(APICallString)
+      .then(function (response) {
         props.onSubmit({
           id: playerData.id,
           server: serverText,
           playerData: playerData,
-          rankData: response.data,
+          rankData: rankedData,
           masteryData: masteryData,
+          challengesData: response.data,
         });
       })
       .catch(function (error) {

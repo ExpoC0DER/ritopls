@@ -26,7 +26,15 @@ module.exports = {
         'lol-red':'#c91d1d',
       },
       backgroundImage:{
-        'lol-magic': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/uikit/backdrop-magic/backdrop-magic.png')"
+        'NONE': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-none.png')",
+        'IRON': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-iron.png')",
+        'BRONZE': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-bronze.png')",
+        'SILVER': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-silver.png')",
+        'GOLD': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-gold.png')",
+        'PLATINUM': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-platinum.png')",
+        'DIAMOND': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-diamond.png')",
+        'MASTER': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-master.png')",
+        'GRANDMASTER': "url('https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-static-assets/global/default/images/challenges-shared/challenge-card-background-grandmaster.png')",
       }
     },
   },

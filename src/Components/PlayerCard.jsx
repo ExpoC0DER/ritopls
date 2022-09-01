@@ -29,12 +29,15 @@ function PlayerCard({ player, removePlayerCard }) {
     return arr;
   };
   const [displayRank, setDisplayRank] = useState(false);
-  const [mostPlayedChamps, setMostPlayedChamps] = useState(test);
+  const [mostPlayedChamps] = useState(test);
+  const [displayMastery, setDisplayMastery] = useState(false);
 
   return (
     <div
       className="flex flex-col w-full h-full m-auto items-center justify-center z-40 select-none"
       onClick={() => setDisplayRank(!displayRank)}
+      onMouseEnter={() => setDisplayMastery(true)}
+      onMouseLeave={() => setDisplayMastery(false)}
     >
       <div className="relative flex flex-col w-full h-full pt-5 pb-14 items-center justify-center overflow-hidden">
         <h3 className="mb-6 font-bold">
@@ -86,41 +89,82 @@ function PlayerCard({ player, removePlayerCard }) {
       <div className="z-50">
         <RiCloseCircleLine onClick={() => removePlayerCard(player.id)} />
       </div>
-      <div className="flex flex-row justify-center mt-2">
-        <img
-          src={
-            mostPlayedChamps[1] == null
-              ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
-              : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
-                mostPlayedChamps[1] +
-                ".png"
-          }
-          alt="Second most mastery points"
-          className="w-10 h-10 mx-2 mt-2"
-        />
-        <img
-          src={
-            mostPlayedChamps[0] == null
-              ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
-              : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
-                mostPlayedChamps[0] +
-                ".png"
-          }
-          alt="Most mastery points"
-          className="w-10 h-10 mx-2"
-        />
-        <img
-          src={
-            mostPlayedChamps[2] == null
-              ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
-              : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
-                mostPlayedChamps[2] +
-                ".png"
-          }
-          alt="Third most mastery points"
-          className="w-10 h-10 mx-2 mt-2"
-        />
-      </div>
+      {displayMastery ? (
+        <div className="absolute bg-black p-4 bg-opacity-70 rounded-lg transition ease-in-out delay-1000">
+          <div className="flex flex-row justify-center mt-2 align-middle">
+            <img
+              src={
+                mostPlayedChamps[1] == null
+                  ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
+                  : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
+                    mostPlayedChamps[1] +
+                    ".png"
+              }
+              alt="Second most mastery points"
+              className="w-10 h-10 mx-2 mt-2"
+            />
+            <img
+              src={
+                mostPlayedChamps[0] == null
+                  ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
+                  : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
+                    mostPlayedChamps[0] +
+                    ".png"
+              }
+              alt="Most mastery points"
+              className="w-10 h-10 mx-2"
+            />
+            <img
+              src={
+                mostPlayedChamps[2] == null
+                  ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
+                  : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
+                    mostPlayedChamps[2] +
+                    ".png"
+              }
+              alt="Third most mastery points"
+              className="w-10 h-10 mx-2 mt-2"
+            />
+          </div>
+          <div className="flex flex-row justify-center">
+            <img
+              src={
+                mostPlayedChamps[1] == null
+                  ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-collections/global/default/images/item-element/mastery-0.png"
+                  : "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-collections/global/default/images/item-element/mastery-" +
+                    player.masteryData[1].championLevel +
+                    ".png"
+              }
+              alt="Second most mastery points"
+              className="w-10 h-10 mx-2"
+            />
+            <img
+              src={
+                mostPlayedChamps[0] == null
+                  ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-collections/global/default/images/item-element/mastery-0.png"
+                  : "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-collections/global/default/images/item-element/mastery-" +
+                    player.masteryData[0].championLevel +
+                    ".png"
+              }
+              alt="Most mastery points"
+              className="w-10 h-10 mx-2 -translate-y-2"
+            />
+            <img
+              src={
+                mostPlayedChamps[2] == null
+                  ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-collections/global/default/images/item-element/mastery-0.png"
+                  : "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-collections/global/default/images/item-element/mastery-" +
+                    player.masteryData[2].championLevel +
+                    ".png"
+              }
+              alt="Third most mastery points"
+              className="w-10 h-10 mx-2"
+            />
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
