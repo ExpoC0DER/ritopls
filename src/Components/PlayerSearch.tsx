@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../App.css";
-import DisappearMsg from "./DisappearMsg";
+// @ts-ignore
+import DisappearMsg from "./DisappearMsg.tsx";
 
 function PlayerSearch(props) {
   const [searchText, setSearchText] = useState("");
@@ -16,7 +17,7 @@ function PlayerSearch(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!searchText || /^\s*$/.test(searchText.text)) {
+    if (!searchText || /^\s*$/.test(searchText)) {
       setErrorMessage("Enter name first");
       setTimeout(() => setErrorMessage(""), 2000);
       return;
@@ -57,7 +58,7 @@ function PlayerSearch(props) {
   }
 
   function getMasteryData(playerData) {
-    var arr = JSON.parse(window.localStorage.getItem("players"));
+    var arr = JSON.parse(window.localStorage.getItem("players")!);
     if (arr.find((player) => player.id === playerData.id) != null) {
       setErrorMessage("Player already in list.");
       setTimeout(() => setErrorMessage(""), 2000);

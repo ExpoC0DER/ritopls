@@ -7,7 +7,7 @@ import champion from "../Json/champion.json";
 function PlayerCard({ player, removePlayerCard }) {
   const test = () => {
     let championData = Object.values(champion.data);
-    let arr = [];
+    let arr:any = [];
     if (player.masteryData.length === 0) {
       return arr;
     }

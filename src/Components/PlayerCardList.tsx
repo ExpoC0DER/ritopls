@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
-import PlayerSearch from "./PlayerSearch";
-import PlayerCard from "./PlayerCard";
+// @ts-ignore
+import PlayerSearch from "./PlayerSearch.tsx";
+// @ts-ignore
+import PlayerCard from "./PlayerCard.tsx";
 import "../App.css";
 
 function PlayerCardList() {
   const [players, setPlayers] = useState(
     window.localStorage.getItem("players") == null
       ? []
-      : JSON.parse(window.localStorage.getItem("players"))
+      : JSON.parse(window.localStorage.getItem("players")!)
   );
 
   useEffect(() => {

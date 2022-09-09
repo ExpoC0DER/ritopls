@@ -41,18 +41,20 @@ function ChallengeCard({ challenge, type, data }) {
 
   return (
     <div
-      className={`flex flex-col w-full h-full m-auto z-40 select-none rounded-md bg-auto bg-center ${getStatusColour()}
-    }`}
+      className={`flex flex-col w-full h-[25rem] justify-around m-auto select-none rounded-md bg-auto bg-center ${getStatusColour()}
+    `}
     >
       <h1 className="relative mx-2 font-bold">{challenge.name}</h1>
-      <p className="relative mx-2">{type.capstone}</p>
-      <p className="relative mx-2">{type.group}</p>
-      <div className="flex w-full justify-center">
+      <p className="relative mx-2">{type.capstoneString}</p>
+      <p className="relative mx-2">{type.groupString}</p>
+      <div className="flex w-full justify-center my-3">
         <img
           src={
             data == null || data.level === "NONE"
               ? "http://ddragon.leagueoflegends.com/cdn/img" +
-              challenge.levelToIconPath[Object.getOwnPropertyNames(challenge.thresholds)[0]]
+                challenge.levelToIconPath[
+                  Object.getOwnPropertyNames(challenge.thresholds)[0]
+                ]
               : "http://ddragon.leagueoflegends.com/cdn/img" +
                 challenge.levelToIconPath[data.level]
           }
@@ -64,13 +66,21 @@ function ChallengeCard({ challenge, type, data }) {
             <img
               src="https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-shared-components/global/default/challenge-card-empty.png"
               alt="ChallengeIcon.png"
-              className="w-32 mt-1 absolute"
+              className="w-32 mt-2 absolute"
             />
-            <img
-              src={challenge.name === type.group ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-shared-components/global/default/challenge-card-token-capstone-mask.png":"https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-shared-components/global/default/challenge-card-token-mask.png"}
-              alt="ChallengeIcon.png"
-              className="w-32 mt-1 absolute"
-            />
+            {challenge.name === type.groupString ? (
+              <img
+                src="https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-shared-components/global/default/challenge-card-token-capstone-mask.png"
+                alt="ChallengeIcon.png"
+                className="w-32 mt-1 absolute"
+              />
+            ) : (
+              <img
+                src="https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-shared-components/global/default/challenge-card-token-mask.png"
+                alt="ChallengeIcon.png"
+                className="w-[8.25rem] mt-1 absolute"
+              />
+            )}
           </>
         ) : (
           <></>
