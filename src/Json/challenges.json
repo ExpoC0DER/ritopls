@@ -3897,19 +3897,19 @@
   },
   {
     "id": 3,
-    "name": "VETERANCY",
+    "name": "TEAMWORK",
     "description": "",
-    "shortDescription": "VETERANCY capstone",
+    "shortDescription": "TEAMWORK capstone",
     "hasLeaderboard": false,
     "levelToIconPath": {},
     "thresholds": {
-      "IRON": { "value": 150 },
-      "BRONZE": { "value": 275 },
-      "SILVER": { "value": 400 },
-      "GOLD": { "value": 1000 },
-      "PLATINUM": { "value": 1500 },
-      "DIAMOND": { "value": 2700 },
-      "MASTER": { "value": 4500 }
+      "IRON": { "value": 100 },
+      "BRONZE": { "value": 200 },
+      "SILVER": { "value": 350 },
+      "GOLD": { "value": 1300 },
+      "PLATINUM": { "value": 2100 },
+      "DIAMOND": { "value": 3800 },
+      "MASTER": { "value": 6500 }
     }
   },
   {
@@ -6160,19 +6160,19 @@
   },
   {
     "id": 4,
-    "name": "TEAMWORK",
+    "name": "VETERANCY",
     "description": "",
-    "shortDescription": "TEAMWORK capstone",
+    "shortDescription": "VETERANCY capstone",
     "hasLeaderboard": false,
     "levelToIconPath": {},
     "thresholds": {
-      "IRON": { "value": 100 },
-      "BRONZE": { "value": 200 },
-      "SILVER": { "value": 350 },
-      "GOLD": { "value": 1300 },
-      "PLATINUM": { "value": 2100 },
-      "DIAMOND": { "value": 3800 },
-      "MASTER": { "value": 6500 }
+      "IRON": { "value": 150 },
+      "BRONZE": { "value": 275 },
+      "SILVER": { "value": 400 },
+      "GOLD": { "value": 1000 },
+      "PLATINUM": { "value": 1500 },
+      "DIAMOND": { "value": 2700 },
+      "MASTER": { "value": 4500 }
     }
   },
   {

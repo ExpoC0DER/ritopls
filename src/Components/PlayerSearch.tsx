@@ -58,13 +58,6 @@ function PlayerSearch(props) {
   }
 
   function getMasteryData(playerData) {
-    var arr = JSON.parse(window.localStorage.getItem("players")!);
-    if (arr.find((player) => player.id === playerData.id) != null) {
-      setErrorMessage("Player already in list.");
-      setTimeout(() => setErrorMessage(""), 2000);
-      return;
-    }
-
     axios
       .get(
         "https://" +

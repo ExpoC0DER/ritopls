@@ -1,0 +1,98 @@
+{
+    "303401" :{
+        "type" : "global",
+        "list" :  ["Akshan","Ashe","Bard","Caitlyn","Draven","Ezreal","Galio","Gangplank","Jhin","Jinx","Kaisa","Karthus","Kled","Lillia","Lux","Maokai","Nocturne","Pantheon","Ryze","Senna","Shen","Sion","Soraka","Swain","Taliyah","TwistedFate","Vex","Xerath","Ziggs"]
+    },
+    "303402" : {
+        "type" : "aoe",
+        "list" : ["Amumu","Anivia","Annie","AurelionSol","Azir","Bard","Belveth","Blitzcrank","Braum","Cassiopeia","Corki","Diana","Draven","Ekko","Evelynn","Ezreal","Fiddlesticks","Fizz","Galio","Gangplank","Gnar","Gragas","Graves","Hecarim","Heimerdinger","Illaoi","Janna","JarvanIV","Jinx","Karthus","Katarina","Kayle","Kennen","Leona","Lissandra","Lux","Malphite","Maokai","MissFortune","Morgana","Nami","Neeko","Nilah","Nunu","Orianna","Ornn","Pantheon","Qiyana","Rakan","Rammus","Rell","Renata","Riven","Rumble","Samira","Sejuani","Senna","Seraphine","Sett","Sona","Swain","Talon","Twitch","Velkoz","Viktor","Vladimir","Volibear","Xayah","XinZhao","Yone","Yuumi","Zac","Zeri","Ziggs","Zyra"]
+    },
+    "303403" : {
+        "type" : "heal",
+        "list" : ["Alistar","Annie","Bard","Fiora","Galio","Ivern","Janna","Karma","Kayle","Kindred","LeeSin","Lulu","Lux","Morgana","Nami","Nidalee","Nilah","Orianna","Rakan","Rell","Renata","Senna","Seraphine","Shen","Sona","Soraka","TahmKench","Taric","Thresh","Yuumi","Zilean"]
+    },
+    "303404" : {
+        "type" : "revive",
+        "list" : ["Akshan","Alistar","Anivia","Bard","Belveth","Braum","Ekko","Elise","Evelynn","Fiora","Fizz","Gwen","Jax","Kalista","Karthus","Kayle","Kayn","Kindred","Kled","KogMaw","Lissandra","Malzahar","Maokai","MasterYi","Olaf","Pantheon","Rakan","Renata","Sion","TahmKench","Taric","Tryndamere","Vladimir","XinZhao","Yuumi","Zac","Zed","Zilean"]
+    },
+    "303405" : {
+        "type" : "stealth",
+        "list" : ["Akali","Akshan","Evelynn","Kaisa","Khazix","Leblanc","Neeko","Nocturne","Pyke","Qiyana","Rengar","Senna","Shaco","Talon","Teemo","Twitch","Vayne","Viego"]
+    },
+    "303406" : {
+        "type" : "poke",
+        "list" : ["Akshan","Ashe","Azir","Caitlyn","Chogath","Corki","DrMundo","Ezreal","Gangplank","Jayce","Jhin","Jinx","Kaisa","Karma","Kled","KogMaw","Lux","Maokai","Nidalee","Pantheon","Senna","Seraphine","Shyvana","Sivir","Taliyah","TwistedFate","Varus","Velkoz","Vex","Viktor","Xayah","Xerath","Yuumi","Zeri","Ziggs","Zoe"]
+    },
+    "303407" : {
+        "type" : "summon",
+        "list" : ["Annie","Azir","Elise","Fiddlesticks","Heimerdinger","Illaoi","Ivern","Kalista","Kindred","Lissandra","Malzahar","Maokai","Neeko","Orianna","Shaco","Yorick","Zed","Zyra"]
+    },
+    "303409" : {
+        "type" : "displacement",
+        "list" : ["Alistar","AurelionSol","Azir","Blitzcrank","Darius","Gnar","Gragas","Hecarim","Janna","Jayce","Kled","LeeSin","Maokai","Mordekaiser","Nautilus","Nilah","Orianna","Poppy","Pyke","Rell","Sett","Singed","Skarner","Swain","TahmKench","Taliyah","Thresh","Tristana","Urgot","Vayne","XinZhao","Yone","Zac","Ziggs"]
+    },
+    "303410" : {
+        "type" : "traps",
+        "list" : ["Caitlyn","Gangplank","Jhin","Jinx","Maokai","Nidalee","Shaco","Teemo","Ziggs","Zyra"]
+    },
+    "303411" : {
+        "type" : "terrain",
+        "list" : ["Anivia","Azir","Irelia","Ivern","JarvanIV","Ornn","Taliyah","Trundle","Veigar","Yorick"]
+    },
+    "303412" : {
+        "type" : "imobilize",
+        "list" : ["Aatrox","Alistar","Amumu","Anivia","AurelionSol","Bard","Blitzcrank","Braum","Camille","Galio","Gnar","Gragas","Hecarim","Ivern","Janna","JarvanIV","Kled","Leblanc","Leona","Lissandra","Lulu","Maokai","Morgana","Nami","Nautilus","Neeko","Nunu","Ornn","Poppy","Pyke","Qiyana","Rammus","Rell","Renata","Riven","Sejuani","Seraphine","Sett","Shaco","Singed","Sion","Skarner","TahmKench","Thresh","Urgot","Vi","Warwick","XinZhao","Yasuo","Yone","Zac","Zyra"]
+    },
+    "303501" : {
+        "type" : "bundleCity",
+        "list" : ["Corki","Fizz","Gnar","Heimerdinger","Kennen","Kled","Lulu","Poppy","Rumble","Teemo","Tristana","Veigar","Vex","Yuumi","Ziggs"]
+    },
+    "303502" : {
+        "type" : "bilgewater",
+        "list" : ["Fizz","Gangplank","Graves","Illaoi","MissFortune","Nautilus","Nilah","Pyke","TahmKench","TwistedFate"]
+    },
+    "303503" : {
+        "type" : "demacia",
+        "list" : ["Fiora","Galio","Garen","JarvanIV","Kayle","Lucian","Lux","Morgana","Poppy","Quinn","Shyvana","Sona","Sylas","Vayne","XinZhao"]
+    },
+    "303504" : {
+        "type" : "freljord",
+        "list" : ["Anivia","Ashe","Braum","Gnar","Gragas","Lissandra","Nunu","Olaf","Ornn","Sejuani","Trundle","Tryndamere","Udyr","Volibear"]
+    },
+    "303505" : {
+        "type" : "ionia",
+        "list" : ["Ahri","Akali","Irelia","Ivern","Jhin","Karma","Kayn","Kennen","LeeSin","Lillia","MasterYi","Rakan","Sett","Shen","Syndra","Varus","MonkeyKing","Xayah","Yasuo","Yone","Zed"]
+    },
+    "303506" : {
+        "type" : "ixtal",
+        "list" : ["Malphite","Neeko","Nidalee","Qiyana","Rengar","Ryze"]
+    },
+    "303507" : {
+        "type" : "noxus",
+        "list" : ["Cassiopeia","Darius","Draven","Katarina","Kled","Leblanc","Rell","Riven","Samira","Sion","Swain","Talon","Vladimir"]
+    },
+    "303508" : {
+        "type" : "piltover",
+        "list" : ["Caitlyn","Camille","Corki","Ezreal","Heimerdinger","Jayce","Orianna","Seraphine","Vi"]
+    },
+    "303509" : {
+        "type" : "shadowIsles",
+        "list" : ["Elise","Evelynn","Fiddlesticks","Gwen","Hecarim","Kalista","Karthus","Maokai","Senna","Thresh","Viego","Yorick"]
+    },
+    "303510" : {
+        "type" : "shurima",
+        "list" : ["Akshan","Amumu","Azir","Nasus","Rammus","Renekton","Sivir","Skarner","Taliyah","Xerath","Zilean"]
+    },
+    "303511" : {
+        "type" : "targon",
+        "list" : ["Aphelios","AurelionSol","Diana","Leona","Pantheon","Soraka","Taric","Zoe"]
+    },
+    "303512" : {
+        "type" : "void",
+        "list" : ["Belveth","Chogath","Kaisa","Kassadin","Khazix","KogMaw","Malzahar","RekSai","Velkoz"]
+    },
+    "303513" : {
+        "type" : "zaun",
+        "list" : ["Blitzcrank","DrMundo","Ekko","Janna","Jinx","Renata","Singed","Twitch","Urgot","Viktor","Warwick","Zac","Zeri","Ziggs"]
+    }
+}

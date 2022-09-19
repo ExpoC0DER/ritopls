@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
-import { RiCloseCircleLine } from "react-icons/ri";
+import axios from "axios";
 import { useState } from "react";
 import champion from "../Json/champion.json";
 
-function PlayerCard({ player, removePlayerCard }) {
+function PlayerCard({ player }) {
   const test = () => {
     let championData = Object.values(champion.data);
-    let arr:any = [];
+    let arr: any = [];
     if (player.masteryData.length === 0) {
       return arr;
     }
@@ -31,6 +31,19 @@ function PlayerCard({ player, removePlayerCard }) {
   const [displayRank, setDisplayRank] = useState(false);
   const [mostPlayedChamps] = useState(test);
   const [displayMastery, setDisplayMastery] = useState(false);
+  const [version, setVersion] = useState("");
+
+  useEffect(() => {
+    //get lates version on create
+    axios
+      .get("https://ddragon.leagueoflegends.com/api/versions.json")
+      .then(function (response) {
+        setVersion(response.data[0]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div
@@ -49,7 +62,9 @@ function PlayerCard({ player, removePlayerCard }) {
         <img
           className="relative w-32 rounded-full -z-40"
           src={
-            "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/profileicon/" +
+            "http://ddragon.leagueoflegends.com/cdn/" +
+            version +
+            "/img/profileicon/" +
             player.playerData.profileIconId +
             ".png"
           }
@@ -86,9 +101,6 @@ function PlayerCard({ player, removePlayerCard }) {
 
       <h3>Level: {player.playerData.summonerLevel}</h3>
 
-      <div className="z-50">
-        <RiCloseCircleLine onClick={() => removePlayerCard(player.id)} />
-      </div>
       {displayMastery ? (
         <div className="absolute bg-black p-4 bg-opacity-70 rounded-lg transition ease-in-out delay-1000">
           <div className="flex flex-row justify-center mt-2 align-middle">
@@ -96,7 +108,9 @@ function PlayerCard({ player, removePlayerCard }) {
               src={
                 mostPlayedChamps[1] == null
                   ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
-                  : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
+                  : "http://ddragon.leagueoflegends.com/cdn/" +
+                    version +
+                    "/img/champion/" +
                     mostPlayedChamps[1] +
                     ".png"
               }
@@ -107,7 +121,9 @@ function PlayerCard({ player, removePlayerCard }) {
               src={
                 mostPlayedChamps[0] == null
                   ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
-                  : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
+                  : "http://ddragon.leagueoflegends.com/cdn/" +
+                    version +
+                    "/img/champion/" +
                     mostPlayedChamps[0] +
                     ".png"
               }
@@ -118,7 +134,9 @@ function PlayerCard({ player, removePlayerCard }) {
               src={
                 mostPlayedChamps[2] == null
                   ? "https://raw.communitydragon.org/12.15/plugins/rcp-fe-lol-champ-select/global/default/images/champion-grid/random-champion.png"
-                  : "http://ddragon.leagueoflegends.com/cdn/12.15.1/img/champion/" +
+                  : "http://ddragon.leagueoflegends.com/cdn/" +
+                    version +
+                    "/img/champion/" +
                     mostPlayedChamps[2] +
                     ".png"
               }
